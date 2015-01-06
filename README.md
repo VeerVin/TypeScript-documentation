@@ -1,4 +1,4 @@
 work
 ====
 
-My first work on GitHub
+My first work on GitHub, starting something good
