@@ -1,4 +1,4 @@
-work
+TypeScript
 ====
 
-My first work on GitHub, starting something good
+Documenting TypeScript for reference
