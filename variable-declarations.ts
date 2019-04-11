@@ -18,11 +18,13 @@ if(true){
 console.log(b) // this will print: 321.
 
 /* So you can see '{}' is not creating any new scope, variable 'b' decalred using var are reffering to
- * same memory allocation. The varibale is same inside is block as it is outside. This is why TypeScript
+ * same memory allocation. The varibale is same inside if block as it is outside. This is why TypeScript
  * introduced 'Let' keyword.
  * 
  * Variables decalred using 'let' keyword, will not leak out of scope. Blocked scope variable are not visible
  * outside their scope.
+ * 
+ * Variable decalred using 'var' keyword is scoped to its parent function.
 */
 
 let c = 'abc';
@@ -121,3 +123,61 @@ for (let i = 0; i < 10 ; i++) {
  * 8
  * 9
 */
+
+// Using 'Let' keyword to decalre different types in TypeScript.
+
+let m = 5;
+m = 'abc'
+
+/* Check the above code 'm' is showing error when we changed the value to 'abc' which is a string.
+ * So when you decalre variable using 'let' keyword you can change the type of the variable. This
+ * can prevent unnecesary issues, like if you used the 'm' variable for a for loop.
+ * 
+ * If you use 'var' to decalre variable then the above code is perfectly fine. Becuase JavaScript 
+ * understand that you are mutating the type of the variable.
+*/
+
+// So what if you want 'let' to behave like 'var' variable declaration?
+
+let n; // Just intiaizlize the variable dont assign any value to it. Then you can mutate however you want
+n = 1;
+n = 'abc';
+n = true;
+n = [];
+n = {};
+
+// The above decalration can be little bit confusing, to make it more verbose we can add type annotations:
+
+let o: any;
+let p: number;
+let q: boolean;
+let r: string;
+// Array decalration
+let s: any[] = [1, 'abc', true, { a: '123'}, function(){ console.log('function inisde array') }];
+let t: number[] = [1, 2, 3];
+let y: string[] = ['a', 'b', 'c'];
+let w: boolean[] = [true, false, false];
+
+// Using 'const' for variable declarations:
+
+const totalStrenght = 200;
+totalStrenght = 550;
+
+/* You cant re-assign any value to the 'const' variable, once you assign value to it it is not mutable.
+ * But if you use 'const' for decalring a object, then you can mutate the methods and properties of the object.
+*/
+
+const person = {
+    firstName: 'Veer',
+    lastName: 'Singh',
+}
+
+// Error
+person = {
+    name: 'Jhon',
+    lastName: 'Dean',
+};
+
+// all "okay"
+person.firstName = 'Sunil';
+person.lastName = 'Kumar';
