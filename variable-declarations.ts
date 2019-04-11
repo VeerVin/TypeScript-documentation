@@ -246,6 +246,8 @@ let someValue: any = "this is a string";
 
 let strLength: number = (<string>someValue).length; // "<angle bracket>" syntax
 
+// the below one is preffered one:
+
 let someValues: any = "this is a string";
 
 let strsLength: number = (someValue as string).length; // "as type" syntax 
