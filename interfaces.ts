@@ -5,7 +5,7 @@
  * an interface defines the syntax that any entity must adhere to.
  * 
  * By defining an interface we are defining the shape of the object, the type of value each property
- * will have. We can say it is ustom type, which is created by you :)
+ * will have. We can say it is custom type, which is created by you :)
  * 
  * So that we dont pass a number type instead of an string type.
 */
@@ -80,7 +80,7 @@ drawPointss({
  * In this code 'point: Points' interface is informaing the function what type of value the paramter
  * holds.
  * 
- * Note: While naming interface allways use pascal naming convection, by that I mean the 
+ * Note: While naming interface always use pascal naming convection, by that I mean the 
  * starting letter of name should be cpaital.
  */
 
@@ -166,3 +166,5 @@ let mySquare = createSquare({ color: "black" });
  * 
  * if you pass only '{ color: "black" }' to the function then the output will be: {color: "black", area: 100}
  */
+
+// For more info: https://www.typescriptlang.org/docs/handbook/interfaces.html
