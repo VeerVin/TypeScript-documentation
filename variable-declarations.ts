@@ -150,13 +150,45 @@ n = {};
 
 let o: any;
 let p: number;
+/* In addition to hexadecimal and decimal literals, TypeScript also supports binary and octal literals 
+ * introduced in ECMAScript 2015. Example: 
+*/
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
+
 let q: boolean;
 let r: string;
+/* You can also use template strings, which can span multiple lines and have embedded expressions. 
+ * These strings are surrounded by the backtick/backquote (`) character, and embedded expressions 
+ * are of the form ${ expr }. Example:
+*/
+let fullName = `Bob Bobbington`;
+let age = 37;
+let sentence = `Hello, my name is ${ fullName }. I'll be ${ age + 1 } years old next month.`;
+
+console.log(sentence); // Hello, my name is Bob Bobbington. I'll be 38 years old next month.
+
 // Array decalration
 let s: any[] = [1, 'abc', true, { a: '123'}, function(){ console.log('function inisde array') }];
 let t: number[] = [1, 2, 3];
 let y: string[] = ['a', 'b', 'c'];
 let w: boolean[] = [true, false, false];
+
+// Tuple
+/* Tuple types allow you to express an array where the type of a fixed number of elements is known, 
+ * but need not be the same. For example, you may want to represent a value as a pair of a string 
+ * and a number:
+*/
+
+// Declare a tuple type
+let x: [string, number];
+
+// Initialize it
+x = ["hello", 10]; // OK
+
+// Initialize it incorrectly
+x = [10, "hello"]; // Error
 
 // Using 'const' for variable declarations:
 
@@ -181,3 +213,41 @@ person = {
 // all "okay"
 person.firstName = 'Sunil';
 person.lastName = 'Kumar';
+
+// Enum:
+/* In Enum we put all the related constants inside an container Or we can say that enum is the
+ * concept of organizing set of realted values. 
+*/
+
+// enum syntax:
+enum Color {red, green, blue}; // we start with enum then property name in this case 'color' and then values.
+
+// Now to access those values we can set a vaiable and use dot notation to get the values.
+let bgRed = Color.red;
+let bgGreen = Color.green;
+let bgBlue = Color.blue;
+
+// in terms of value in the above enum 'Color' will start numbering them from '0', so the code will be:
+enum Color {red = 0, green = 1, blue = 2};
+// it is best practise to add numbers, so that people accidently dont change the index value.
+
+// Suppose you dont know in enum 'Color' what is mapped at index '1', how you will find out?
+let colorName: string = Color[1]; // this will give you value: green
+
+// Type Assertions:
+/* Type assertion is you telling typescript that you know what type of data variable is storing,
+ * and to trust you :). It performs no sepcial check or restructring of data.
+ * Mostly it is used when you want the code editor intellisense to work. 
+*/
+
+// Type assertions have two forms:
+
+let someValue: any = "this is a string";
+
+let strLength: number = (<string>someValue).length; // "<angle bracket>" syntax
+
+// the below one is preffered one:
+
+let someValues: any = "this is a string";
+
+let strsLength: number = (someValue as string).length; // "as type" syntax 
