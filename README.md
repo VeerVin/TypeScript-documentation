@@ -8,3 +8,5 @@ Order of Reading:
 2. Interfaces
 3. Classes
 4. Member Access Modifiers: Public, Private and Protected
+5. Functions Part One
+6. Functions Part Two
