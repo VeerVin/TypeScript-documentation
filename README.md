@@ -10,3 +10,4 @@ Order of Reading:
 4. Member Access Modifiers: Public, Private and Protected
 5. Functions Part One
 6. Functions Part Two
+7. Generics
