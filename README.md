@@ -11,3 +11,4 @@ Order of Reading:
 5. Functions Part One
 6. Functions Part Two
 7. Generics
+8. Enums
